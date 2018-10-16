@@ -24,18 +24,9 @@ public class Ball : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            hasStarted = true;
-        }
-
-        if(hasStarted == false)
+        if (!hasStarted)
         {
             LockBallToPaddle();
-        }
-
-        else if(hasStarted == true)
-        {
             LaunchBallOnMouseClick();
         }
         
@@ -47,6 +38,7 @@ public class Ball : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            hasStarted = true;
             GetComponent<Rigidbody2D>().velocity = new Vector2(minV, MaxV);
         }
     }
@@ -60,7 +52,7 @@ public class Ball : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         AudioClip clip = ballSounds[UnityEngine.Random.Range(0,ballSounds.Length)];
-        if (hasStarted)
+        if (hasStarted == true)
         {
             GetComponent<AudioSource>().PlayOneShot(clip);
         }
