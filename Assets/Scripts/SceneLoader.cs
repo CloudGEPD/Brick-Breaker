@@ -6,7 +6,7 @@ using UnityEditor;
 
 public class SceneLoader : MonoBehaviour
 {
-    [SerializeField] SceneAsset asset;
+    [SerializeField] SceneAsset sceneAsset;
     public void LoadNextScene()
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex;
@@ -20,7 +20,7 @@ public class SceneLoader : MonoBehaviour
     
     public void LoadSceneByDrag()
     {
-        SceneManager.LoadScene(asset.name);
+        SceneManager.LoadScene(sceneAsset.name);
     }
 
     public void QuitGame()
