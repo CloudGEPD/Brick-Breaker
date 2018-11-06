@@ -10,7 +10,6 @@ public class Block : MonoBehaviour
     {
         level = FindObjectOfType<Level>();
         level.CountBreakAbleBlocks();
-        gamestatus = FindObjectOfType<GameStatus>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -19,10 +18,11 @@ public class Block : MonoBehaviour
 
     private void DestroyBlock()
     {
+        FindObjectOfType<GameStatus>().AddToScore();
         AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
         Destroy(gameObject);
         level.BlocksDestroyed();
-        gamestatus.AddToScore();
+        
         
     }
 }
