@@ -18,6 +18,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(name);
     }
     
+    public void LoadStartScene()
+    {
+        SceneManager.LoadScene(0);
+    }
+    
     public void LoadSceneByDrag()
     {
         SceneManager.LoadScene(sceneAsset.name);
