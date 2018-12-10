@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 61423693936428806}
   - component: {fileID: 114473992612387024}
   m_Layer: 0
-  m_Name: Block
-  m_TagString: Untagged
+  m_Name: Breakable block
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1643032062739662}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 6.5, z: -0.4453125}
+  m_LocalPosition: {x: 0.8, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,6 +79,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: 9199efd8b0ed44647b3bcf7c63aa99f4, type: 3}
+  blockSparklesVFX: {fileID: 1905498586577766, guid: 5f3726e0a97b08c4f823f2022ff9be70,
+    type: 2}
 --- !u!212 &212507360921586198
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -115,7 +117,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ac03c8a0d5bc0334c8a06047e3d77e50, type: 3}
-  m_Color: {r: 0.40784314, g: 0.8078867, b: 0.8117647, a: 1}
+  m_Color: {r: 0.6058857, g: 0.8980392, b: 0.19215684, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -626,8 +626,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 114145120989486530, guid: e39624dceb64bd44380b37501c951599,
           type: 2}
-        m_MethodName: LoadSpecificScene
-        m_Mode: 5
+        m_MethodName: LoadStartScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
