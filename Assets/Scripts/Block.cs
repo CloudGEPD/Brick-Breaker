@@ -5,19 +5,47 @@ using TMPro;
 
 public class Block : MonoBehaviour
 {
-    
+    //Configuration parameters
     [SerializeField] AudioClip breakSound;
     [SerializeField] GameObject blockSparklesVFX;
+    [SerializeField] int maxHits;
+
+    //cached references
     Level level;
     GameSession gamestatus;
+
+    //debug purposes
+    [SerializeField] int timesHit;
+
     private void Start()
     {
-        level = FindObjectOfType<Level>();
-        level.CountBreakAbleBlocks();
+        CountBreakableBlocks();
     }
+
+    private void CountBreakableBlocks()
+    {
+        level = FindObjectOfType<Level>();
+        if (tag == "Breakable")
+        {
+            level.CountBlocks();
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        DestroyBlock();
+        if (tag == "Breakable")
+        {
+            HandleHit();
+        }
+    }
+
+    private void HandleHit()
+    {
+        timesHit++;
+        if (timesHit >= maxHits)
+        {
+            DestroyBlock();
+        }
     }
 
     private void DestroyBlock()
