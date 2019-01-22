@@ -8,6 +8,7 @@ public class GameSession : MonoBehaviour
     [SerializeField] int pointsPerBlockDestroyed = 1;
     [SerializeField] int currentScore;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] bool isAutoPlayEnabled;
     // Use this for initialization
 
     // Update is called once per frame
@@ -46,5 +47,10 @@ public class GameSession : MonoBehaviour
     {
         Destroy(gameObject);
     
+    }
+
+    public bool IsAutoPlayEnabled()
+    {
+        return isAutoPlayEnabled;
     }
 }
